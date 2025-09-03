@@ -16,7 +16,7 @@ def register(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('users:home')
+            return redirect('posters:list_posters')
     else:
         form = RegistrationForm()
     return render(request, 'users/register.html', {'form': form})
@@ -33,7 +33,7 @@ def login_user(request):
             user = authenticate(request,username=username,password=password)
             if user is not None:
                 login(request,user)
-                return redirect('users:home')
+                return redirect('posters:list_posters')
 
 
     return render(request,'users/login.html',{'form':form})

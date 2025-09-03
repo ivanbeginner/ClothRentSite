@@ -1,4 +1,4 @@
-{% extends "products/base.html" %}
+{% extends "posters/base.html" %}
 {% block content %}
 {% if error_message %}
     <p>{{ error_message }}</p>
@@ -8,5 +8,5 @@
     {{ form.as_p }}
     <button type="submit" class="btn btn-primary btn-lg btn-block">Log in</button>
 </form>
-  <a href="{% url 'users:register' %}"><button class="btn btn-primary btn-lg btn-block" style="margin-top:20px;">Register</button></a>
+  <a href="{% url 'posters:list_posters' %}"><button class="btn btn-primary btn-lg btn-block" style="margin-top:20px;">Register</button></a>
 {% endblock %}

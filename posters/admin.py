@@ -4,11 +4,16 @@ from posters.models import Poster, Category
 
 
 # Register your models here.
-@admin.register(Poster)
-class PosterAdmin(admin.ModelAdmin):
-    list_display = ['author','title','description','price','location','contacts','date_start_rent','date_end_rent','category']
 
-@admin.register(Category)
+
 class CategoryAmin(admin.ModelAdmin):
     list_display = ['name']
+class PosterAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Poster._meta.get_fields()]
+    
+    
+    
+    
 
+admin.site.register(Category,CategoryAmin)
+admin.site.register(Poster,PosterAdmin)
