@@ -1,0 +1,11 @@
+{% extends "posters/base.html"%}
+
+<body>
+{% block content %}
+{% for poster in list %}
+{{ poster.title }}
+{{ poster.image }}
+{{ poster.description }}
+{% endfor %}
+{% endblock %}
+</body>

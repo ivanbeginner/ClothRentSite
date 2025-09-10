@@ -4,5 +4,5 @@ app_name='posters'
 
 urlpatterns = [
     path('',list_posters,name='list_posters'),
-    path('/add_req_mod',add_poster,name='add_req_mod')
+    path('add_req_mod/',add_poster,name='add_req_mod')
 ]
